@@ -3,3 +3,5 @@ Flask-RESTful
 Flask-SQLAlchemy
 uwsgi
 rasa_nlu
+sklearn_crfsuite
+tensorflow
