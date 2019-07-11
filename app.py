@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource, reqparse, Api
+from rasa_nlu.training_data import load_data
 from rasa_nlu.model import Interpreter
 
 app = Flask(__name__)
@@ -71,7 +72,7 @@ class intent(Resource):
 
     
 def predict_intent(text):
-    interpreter = Interpreter.load('.\models\nlu\default\horoscopebot')
+    interpreter = Interpreter.load('./models/nlu/default/horoscopebot')
     return interpreter.parse(text)
 
 
