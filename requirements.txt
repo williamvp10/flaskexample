@@ -5,3 +5,5 @@ uwsgi
 rasa_nlu
 sklearn_crfsuite
 tensorflow
+tensorflow-gpu
+spacy
