@@ -6,3 +6,7 @@ rasa_nlu
 sklearn_crfsuite
 tensorflow
 spacy
+rasa-core
+rasa-core-sdk
+gunicorn
+requests
