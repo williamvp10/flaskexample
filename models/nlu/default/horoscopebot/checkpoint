@@ -1,0 +1,2 @@
+model_checkpoint_path: "D:\\William\\jupyter\\horoscopo_bot\\./models/nlu\\default\\horoscopebot\\component_5_EmbeddingIntentClassifier.ckpt"
+all_model_checkpoint_paths: "D:\\William\\jupyter\\horoscopo_bot\\./models/nlu\\default\\horoscopebot\\component_5_EmbeddingIntentClassifier.ckpt"

@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+actions:
+- utter_greet
+- utter_ask_horoscope_sign
+- utter_ask_dob
+- utter_subscribe
+- get_todays_horoscope
+- subscribe_user
+config:
+  store_entities_as_slots: true
+entities:
+- horoscope_sign
+- DD
+- MM
+- subscribe
+- dob_intent
+forms: []
+intents:
+- saludo:
+    use_entities: true
+- get_horoscopo:
+    use_entities: true
+- subscripcion:
+    use_entities: true
+- dob_intent:
+    use_entities: true
+slots:
+  DD:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  MM:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  horoscope_sign:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  subscribe:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
+templates:
+  utter_ask_dob:
+  - text: Cual es tu fecha de nacimiento DOB in DD-MM format?
+  utter_ask_horoscope_sign:
+  - text: Cual es tu signo?
+  utter_greet:
+  - text: Hola! Como estas hoy?
+  utter_subscribe:
+  - text: quieres suscribirte al horoscopo diario?

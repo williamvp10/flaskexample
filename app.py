@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, reqparse, Api
+from rasa_nlu.model import Interpreter
 
 app = Flask(__name__)
 api = Api(app)
@@ -54,6 +55,27 @@ class All_Movies(Resource):
     def get(self):
         return {'Movies': list(map(lambda x: x.json(), Movies.query.all()))}
     
+    
+    
+class index(Resource):
+    def get(self):
+        return "<p> Horoscope bot <p>"
+
+
+class intent(Resource):
+    def post(self):
+        json_data = request.get_json(force=True)
+        text = json_data['text']
+        json= predict_intent(text)
+        return json
+
+    
+def predict_intent(text):
+    interpreter = Interpreter.load('./models/nlu/default/horoscopebot')
+    return interpreter.parse(text)
+
+
+api.add_resource(intent, '/intent')
 api.add_resource(All_Movies, '/')
 api.add_resource(Movies_List, '/<string:movie>')
 
