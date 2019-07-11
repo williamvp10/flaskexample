@@ -71,8 +71,9 @@ class intent(Resource):
 
     
 def predict_intent(text):
-    interpreter = Interpreter.load('./models/nlu/default/horoscopebot')
+    interpreter = Interpreter.load('.\models\nlu\default\horoscopebot')
     return interpreter.parse(text)
+
 
 
 api.add_resource(intent, '/intent')
